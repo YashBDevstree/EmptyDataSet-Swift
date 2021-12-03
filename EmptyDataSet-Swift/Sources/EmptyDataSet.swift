@@ -78,7 +78,7 @@ extension UIScrollView: UIGestureRecognizerDelegate {
             
             if let view = objc_getAssociatedObject(self, &kEmptyDataSetView) as? EmptyDataSetView {
                 return !view.isHidden
-            }else{
+            }
             return false
         
        
