@@ -81,7 +81,7 @@ extension UIScrollView: UIGestureRecognizerDelegate {
             }
             return false
         
-       
+        }
     }
     
     func setForceFullyVisible(isVisible : Bool) {
