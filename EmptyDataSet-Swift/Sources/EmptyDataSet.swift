@@ -69,12 +69,23 @@ extension UIScrollView: UIGestureRecognizerDelegate {
             objc_setAssociatedObject(self, &kEmptyDataSetDelegate, WeakObjectContainer(with: newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
-    
+    public var isForceFullyEmptyViewVisible: Bool = false
     public var isEmptyDataSetVisible: Bool {
-        if let view = objc_getAssociatedObject(self, &kEmptyDataSetView) as? EmptyDataSetView {
-            return !view.isHidden
+        
+        if isForceFullyEmptyViewVisible {
+            return true
+        }else{
+            
+            if let view = objc_getAssociatedObject(self, &kEmptyDataSetView) as? EmptyDataSetView {
+                return !view.isHidden
+            }else{
+            return false
         }
-        return false
+       
+    }
+    
+    func setForceFullyVisible(isVisible : Bool) {
+        self.isEmptyDataSetVisible = isVisible
     }
     
     //MARK: - privateProperty
