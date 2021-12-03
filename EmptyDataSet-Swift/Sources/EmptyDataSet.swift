@@ -80,7 +80,7 @@ extension UIScrollView: UIGestureRecognizerDelegate {
                 return !view.isHidden
             }else{
             return false
-        }
+        
        
     }
     
